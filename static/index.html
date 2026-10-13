@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OARAG - RAG 知识库问答机器人</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- 左侧栏 -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <div class="brand">
+          <span class="brand-name">OARAG</span>
+          <button class="btn btn-blue btn-sm" id="new-session-btn">+ 新会话</button>
+        </div>
+      </div>
+      <nav class="session-list" id="session-list"></nav>
+      <div class="sidebar-bottom">
+        <div class="kb-header">
+          <span class="kb-title">知识库</span>
+          <span class="kb-count" id="kb-count">0 个文档</span>
+        </div>
+        <button class="btn btn-blue btn-block" id="upload-btn">上传文档</button>
+        <input type="file" id="file-input" accept=".txt,.md,.pdf,.docx" hidden>
+        <span class="upload-status" id="upload-status"></span>
+        <ul class="doc-list" id="doc-list"></ul>
+      </div>
+    </aside>
+
+    <!-- 右侧聊天区 -->
+    <main class="chat">
+      <header class="chat-header">
+        <h2 class="chat-title" id="chat-title">选择一个会话</h2>
+      </header>
+      <div class="messages" id="messages"></div>
+      <footer class="chat-input">
+        <textarea id="message-input" rows="1" placeholder="输入消息，Enter 发送，Shift+Enter 换行"></textarea>
+        <button class="btn btn-blue" id="send-btn">发送</button>
+      </footer>
+    </main>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
